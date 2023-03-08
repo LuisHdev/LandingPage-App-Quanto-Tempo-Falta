@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-image: url(img/bg.png);
+  background-size: cover;
+  overflow-x: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 90px;
+  background-color: transparent;
+  flex-wrap: wrap;
+}
+
+nav i {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-image: initial;
+  border-radius: 50%;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+nav i:hover{
+  background-color: rgb(17, 40, 48);
+  border-color: rgb(17, 40, 48);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 50px;
+}
+
+.logo h1 {
+  padding-left: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li a {
+  display: flex;
+  padding: 0px 15px;
+  text-decoration: none;
+}
+
+
+nav button {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  background-color: transparent;
+  margin-left: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(255, 255, 255);
+  padding: 10px;
+  transition: .3s;
+}
+
+nav button:hover{
+  background-color: rgb(17, 40, 48);
+  border-color: rgb(17, 40, 48);
+}
+
+.container {
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 90px);
+  overflow-x: hidden;
+  margin: 0px auto;
+}
+
+.informacoes {
+  padding: 0px 90px;
+}
+
+.informacoes h1 {
+  font-size: 90px;
+  color: rgb(17, 40, 48);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.informacoes p {
+  font-size: 22px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  padding-bottom: 40px;
+}
+
+.informacoes a {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  background-color: rgb(17, 40, 48);
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 18px;
+  transition: all 0.2s ease 0s;
+}
+
+.informacoes a:hover{
+  background-color: rgba(52, 52, 50, 0.75);
+}
+
+.container-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 50vh;
+  background-color: rgb(33, 82, 99);
+}
+
+.about-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border-top: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
+  padding: 40px;
+}
+
+.about-item p {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.about-item i {
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(52, 52, 50, 0.75);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  z-index: 2;
+}
+
+.modal.aberto {
+  visibility: visible;
+}
+
+.content-modal form {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 300px;
+  background-color: rgb(0, 151, 156);
+  font-family: Montserrat, sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.content-modal form label {
+  margin: 15px 0px;
+}
+
+.close-button {
+  display: flex;
+  justify-content: end;
+}
+
+.close-button button {
+  width: 40px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(52, 52, 50, 0.75);
+  border: none;
+  border-radius: 50%;
+}
+
+.content-modal input[type="text"], [type="email"] {
+  background-color: rgba(52, 52, 50, 0.75);
+  height: 50px;
+  padding-left: 10px;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border-bottom: 2px solid rgb(148, 148, 148);
+  border: none;
+}
+
+.content-modal textarea {
+  background-color: rgba(52, 52, 50, 0.75);
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  border-bottom: 2px solid rgb(148, 148, 148);
+  padding: 10px;
+  border: none;
+}
+
+.content-modal input[type="submit"] {
+  background-color: rgb(17, 40, 48);
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 30px 0px;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+}
+
+.modal i {
+  position: relative;
+  left: 90%;
+  bottom: 26px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  width: 100%;
+  background-color: rgb(88, 88, 88);
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid rgb(255, 255, 255);
+  transition: .3s;
+}
+
+footer a:hover{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 900px){
+.informacoes h1 {
+    font-size: 40px;
+}
+.about-item {
+  background-color: rgb(17, 40, 48);
+  border-radius: 10px;
+  border: none;
+}
+.container-about {
+  height: auto;
+  width: 100%;
+  align-content: center;
+  gap: 90px;
+  padding: 35px 30px;
+}
+footer{
+  justify-content: center;
+}
+footer a{
+  margin-left: 10px;
+}
+
+}
+
+@media (max-width: 768px){
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 30px;
+}
+.celular {
+  width: 200px;
+  padding-top: 60px;
+}
+}
+
+@media (max-width: 564px){
+  .logo h1{
+    display: none;
+  }
+  .celular{
+    width: 120px;
+    padding-top: 50px;
+  }
+  nav .logo{
+    display: none;
+  }
+}
+
+@media (max-width: 348px){
+  .celular{
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 320px){
+  .celular{
+    display: none;
+  }
+}
+
+
+
